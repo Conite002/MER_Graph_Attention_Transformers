@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
-from GraphModel import GraphModel
-from FeatureFunctions import features_packing, multi_concat
+from .GraphModel import GraphModel
+from .FeatureFunctions import features_packing, multi_concat
 
 class Framework(nn.Module):
     def __init__(self, args):
