@@ -1,7 +1,10 @@
 import argparse
 import torch
 
-def get_test_args():
+def get_test_args(overrides=None):
+    """
+    Return test arguments, optionally overridden by a dictionary.
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument('--modalities', type=list, default=['audio', 'text', 'video'])
     parser.add_argument('--wp', type=int, default=1)
@@ -13,4 +16,11 @@ def get_test_args():
     parser.add_argument('--cross_modal', type=bool, default=True, help="Cross modal")
     parser.add_argument("--edge_type", default="temp_multi", choices=("temp_multi", "multi", "temp"), help="Choices edge contruct type", type=str)
     parser.add_argument('--dim_modals', type=dict, default={'a': 128, 't': 256, 'v': 64})
-    return parser.parse_args()
+
+    args = parser.parse_args([] if overrides is None else [])
+    
+    if overrides:
+        for key, value in overrides.items():
+            setattr(args, key, value)
+    
+    return args
