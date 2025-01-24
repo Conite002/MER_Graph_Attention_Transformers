@@ -16,9 +16,22 @@ class GraphDataset(Dataset):
     def __getitem__(self, idx):
         return self.features[idx], self.labels[idx]
 
-def prepare_dataloaders(features, labels, lengths, batch_size):
-    dataset = GraphDataset(features, labels, lengths)
-    loader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
+def prepare_dataloaders(features, labels, lengths, batch_size, equilibrate=False):
+
+    sampler = None
+    if equilibrate:
+        from torch.utils.data import WeightedRandomSampler
+
+        n_classes = len(torch.unique(labels))
+        class_counts = [labels.numpy().tolist().count(cls) for cls in range(n_classes)]
+        class_weights = [1.0 / count for count in class_counts]
+        sample_weights = [class_weights[label] for label in labels.numpy()]
+        sampler = WeightedRandomSampler(sample_weights, num_samples=len(sample_weights), replacement=True)   
+        dataset = GraphDataset(features, labels, lengths)
+        loader = DataLoader(dataset, batch_size=batch_size, sampler=sampler)
+    else:
+        dataset = GraphDataset(features, labels, lengths)
+        loader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
     return loader
     
 def prepare_graph_data(data, args):
