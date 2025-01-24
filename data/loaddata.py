@@ -7,7 +7,7 @@ from torch_geometric.nn import GCNConv, GATConv, RGCNConv
 from sklearn.metrics import accuracy_score, f1_score
 
 
-def load_data(dataset):
+def load_data():
     data_dir = os.path.join('..', "outputs", "embeddings")
     data = torch.load(os.path.join(data_dir, "loaders_datasets_reduced_label_dim_4.pt"))
 

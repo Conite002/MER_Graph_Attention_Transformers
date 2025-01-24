@@ -4,7 +4,9 @@ from torch_geometric.nn import RGCNConv, TransformerConv
 from torch.utils.data import Dataset, DataLoader
 from tqdm import tqdm   
 from sklearn.metrics import confusion_matrix, classification_report
-
+from models.GNN import GNN
+import numpy as np
+from utils.debug import debug_message
 
 class GraphModel(nn.Module):
     def __init__(self, g_dim, h1_dim, h2_dim, device, args):
@@ -95,8 +97,6 @@ class GraphModel(nn.Module):
         edge_index = torch.tensor(edge_index, dtype=torch.long).t().contiguous()
         edge_type = torch.tensor(edge_type, dtype=torch.long)
 
-        # Validate edge_index
-        debug_message("Validating final edge_index", edge_index.shape)
         if edge_index.max() >= total_length or edge_index.min() < 0:
             raise ValueError(f"Invalid edge_index values: max = {edge_index.max()}, min = {edge_index.min()}, total_length = {total_length}")
 
@@ -134,7 +134,6 @@ class GraphModel(nn.Module):
                             all_perms.add((node_index, j + l * total_lengths))
 
         all_perms = [(src, dst) for src, dst in all_perms if 0 <= src < total_lengths and 0 <= dst < total_lengths]
-        debug_message("Number of valid permutations", len(all_perms))
         return list(all_perms)
 
     def feature_packing(self, x, lengths):
@@ -142,9 +141,6 @@ class GraphModel(nn.Module):
             packed = torch.cat(x, dim=0)
         else:
             packed = x
-        
-        debug_message("Packed features shape", packed.shape)
-        debug_message("Lengths sum", lengths.sum().item())
         
         if packed.size(0) != lengths.sum():
             raise ValueError(f"Mismatch in packed features size: packed.size(0) = {packed.size(0)}, lengths.sum() = {lengths.sum().item()}")
@@ -155,16 +151,11 @@ class GraphModel(nn.Module):
 
     def multi_concat(self, out_gnn, lengths):
         split_sizes = lengths.tolist() if isinstance(lengths, torch.Tensor) else lengths
-        debug_message("Lengths for split", split_sizes)
-        debug_message("Out GNN shape before split", out_gnn.shape)
         
         if sum(split_sizes) != out_gnn.size(0):
             raise ValueError(f"Mismatch: lengths.sum() = {sum(split_sizes)}, out_gnn.size(0) = {out_gnn.size(0)}")
         
         split_features = torch.split(out_gnn, split_sizes, dim=0)
-        debug_message("Split features shapes", [f.shape for f in split_features])
-        
-        # Vérification avant concaténation
         if any(f.size(1) != split_features[0].size(1) for f in split_features):
             raise ValueError("Inconsistent tensor shapes in split features")
 
