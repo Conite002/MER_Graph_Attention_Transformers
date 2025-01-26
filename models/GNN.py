@@ -13,11 +13,9 @@ class GNN(nn.Module):
         self.transformer = TransformerConv(h1_dim, h2_dim, heads=1)
 
     def forward(self, x, edge_index, edge_type):
-        # Validate edge_index
         if edge_index.max() >= x.size(0) or edge_index.min() < 0:
             raise ValueError(f"Invalid edge_index values: max = {edge_index.max()}, min = {edge_index.min()}, x.size(0) = {x.size(0)}")
 
-        # Apply GNN layers
         x = self.rgcn(x, edge_index, edge_type)
         x = torch.relu(x)
         x = self.transformer(x, edge_index)

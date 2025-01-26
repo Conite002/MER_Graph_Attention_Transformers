@@ -7,9 +7,9 @@ from torch_geometric.nn import GCNConv, GATConv, RGCNConv
 from sklearn.metrics import accuracy_score, f1_score
 
 
-def load_data():
+def load_data(data_type='loaders_datasets_reduced_label_dim_4.pt'):
     data_dir = os.path.join('..', "outputs", "embeddings")
-    data = torch.load(os.path.join(data_dir, "loaders_datasets_reduced_label_dim_4.pt"))
+    data = torch.load(os.path.join(data_dir, data_type))
 
     for split in data.keys():
         for modal in ['audio', 'text', 'video']:

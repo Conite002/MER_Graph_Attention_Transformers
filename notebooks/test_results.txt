@@ -1,7 +1,7 @@
-Test Accuracy: 0.6274266831887649
-Test F1 Score: 0.3165696611396373
-Class 0 - Precision: 63.39%, Recall: 96.73%, F1-Score: 76.59%
-Class 1 - Precision: 54.77%, Recall: 22.29%, F1-Score: 31.69%
-Class 2 - Precision: 65.33%, Recall: 10.68%, F1-Score: 18.35%
+Test Accuracy: 0.6516980524706261
+Test F1 Score: 0.3294138873027366
+Class 0 - Precision: 65.62%, Recall: 97.19%, F1-Score: 78.34%
+Class 1 - Precision: 61.56%, Recall: 18.99%, F1-Score: 29.02%
+Class 2 - Precision: 60.77%, Recall: 15.27%, F1-Score: 24.40%
 Class 3 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
-{'0': {'precision': 0.6339077782952958, 'recall': 0.9673063255152807, 'f1-score': 0.7658975801913337, 'support': 1407.0}, '1': {'precision': 0.5477386934673367, 'recall': 0.2229038854805726, 'f1-score': 0.3168604651162791, 'support': 489.0}, '2': {'precision': 0.6533333333333333, 'recall': 0.10675381263616558, 'f1-score': 0.18352059925093633, 'support': 459.0}, '3': {'precision': 0.0, 'recall': 0.0, 'f1-score': 0.0, 'support': 66.0}, 'accuracy': 0.6274266831887649, 'macro avg': {'precision': 0.45874495127399145, 'recall': 0.3242410059080047, 'f1-score': 0.3165696611396373, 'support': 2421.0}, 'weighted avg': {'precision': 0.6029047770206563, 'recall': 0.6274266831887649, 'f1-score': 0.543906905339631, 'support': 2421.0}}
+{'0': {'precision': 0.6561548109657768, 'recall': 0.971868365180467, 'f1-score': 0.7833992940421436, 'support': 3768.0}, '1': {'precision': 0.6155913978494624, 'recall': 0.18988391376451078, 'f1-score': 0.2902408111533587, 'support': 1206.0}, '2': {'precision': 0.6076923076923076, 'recall': 0.15265700483091788, 'f1-score': 0.244015444015444, 'support': 1035.0}, '3': {'precision': 0.0, 'recall': 0.0, 'f1-score': 0.0, 'support': 204.0}, 'accuracy': 0.6516980524706261, 'macro avg': {'precision': 0.4698596291268867, 'recall': 0.32860232094397396, 'f1-score': 0.3294138873027366, 'support': 6213.0}, 'weighted avg': {'precision': 0.6186634624154252, 'recall': 0.6516980524706261, 'f1-score': 0.5720964015383442, 'support': 6213.0}}

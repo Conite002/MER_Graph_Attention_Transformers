@@ -47,10 +47,14 @@ class GraphModel(nn.Module):
 
         self.gnn = GNN(g_dim, h1_dim, h2_dim, self.num_relations, self.n_modals, args)
 
-    def forward(self, x, lengths):
+    def forward(self, x, lengths, drop_nodes=True, gfpush=True):
+        if drop_nodes:
+            x = drop_nodes(x, drop_prob=0.2)
         node_features = self.feature_packing(x, lengths)
 
         node_type, edge_index, edge_type, edge_index_lengths = self.batch_graphify(lengths)
+        if gfpush:
+            node_features, edge_index, node_type = gfpush(node_features, edge_index, node_type, top_k=0.5)
 
         out_gnn = self.gnn(node_features, edge_index, edge_type)
         out_gnn = self.multi_concat(out_gnn, lengths)
@@ -161,3 +165,48 @@ class GraphModel(nn.Module):
 
         return torch.cat(split_features, dim=1)
 
+
+import torch
+
+def drop_nodes(x, drop_prob=0.2):
+    """
+    Drop a subset of nodes by masking their features.
+    Args:
+        x: Node feature matrix of shape (num_nodes, feature_dim).
+        drop_prob: Probability of dropping each node.
+    Returns:
+        Modified node feature matrix with some nodes dropped.
+    """
+    if drop_prob <= 0.0:
+        return x
+
+    mask = torch.rand(x.size(0), device=x.device) > drop_prob
+    x = x * mask.unsqueeze(1)  
+    return x
+
+import torch.nn.functional as F
+
+def gfpush(x, edge_index, batch, top_k=0.5):
+    """
+    Apply GFPush to reduce graph size by selecting important nodes.
+    Args:
+        x: Node feature matrix (num_nodes, feature_dim).
+        edge_index: Edge indices (2, num_edges).
+        batch: Batch assignment vector for each node (num_nodes,).
+        top_k: Proportion of nodes to keep (e.g., 0.5 means keep top 50%).
+    Returns:
+        Reduced graph with selected nodes.
+    """
+    scores = F.relu(x).sum(dim=1)  
+
+    num_nodes = x.size(0)
+    num_keep = int(top_k * num_nodes)
+    top_nodes = scores.topk(num_keep).indices
+
+    new_x = x[top_nodes]
+    new_batch = batch[top_nodes]
+
+    mask = torch.isin(edge_index[0], top_nodes) & torch.isin(edge_index[1], top_nodes)
+    new_edge_index = edge_index[:, mask]
+
+    return new_x, new_edge_index, new_batch
