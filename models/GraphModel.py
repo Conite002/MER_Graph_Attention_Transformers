@@ -16,7 +16,8 @@ class GraphModel(nn.Module):
         self.wp = args['wp']
         self.wf = args['wf']
         self.device = device
-
+        self.gfp = args['gfpush']
+        self.d_nodes = args['drop_nodes']
         print(f"GraphModel --> Edge type: {args['edge_type']}")
         print(f"GraphModel --> Window past: {args['wp']}")
         print(f"GraphModel --> Window future: {args['wf']}")
@@ -47,13 +48,13 @@ class GraphModel(nn.Module):
 
         self.gnn = GNN(g_dim, h1_dim, h2_dim, self.num_relations, self.n_modals, args)
 
-    def forward(self, x, lengths, drop_nodes=True, gfpush=True):
-        if drop_nodes:
+    def forward(self, x, lengths):
+        if self.d_nodes:
             x = drop_nodes(x, drop_prob=0.2)
         node_features = self.feature_packing(x, lengths)
 
         node_type, edge_index, edge_type, edge_index_lengths = self.batch_graphify(lengths)
-        if gfpush:
+        if self.gfp:
             node_features, edge_index, node_type = gfpush(node_features, edge_index, node_type, top_k=0.5)
 
         out_gnn = self.gnn(node_features, edge_index, edge_type)
