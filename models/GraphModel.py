@@ -21,6 +21,7 @@ class GraphModel(nn.Module):
         print(f"GraphModel --> Edge type: {args['edge_type']}")
         print(f"GraphModel --> Window past: {args['wp']}")
         print(f"GraphModel --> Window future: {args['wf']}")
+        self.num_classes = args['num_classes']
         edge_temp = "temp" in args['edge_type']
         edge_multi = "multi" in args['edge_type']
 
@@ -47,7 +48,12 @@ class GraphModel(nn.Module):
         self.edge_temp = edge_temp
 
         self.gnn = GNN(g_dim, h1_dim, h2_dim, self.num_relations, self.n_modals, args)
-
+        self.fc = nn.Sequential(
+            nn.Linear(h2_dim, 128),  # Intermediate hidden layer
+            nn.ReLU(),
+            nn.Dropout(0.5),  # Regularization
+            nn.Linear(128, self.num_classes)  # Output layer
+        )
     def forward(self, x, lengths):
         if self.d_nodes:
             x = drop_nodes(x, drop_prob=0.2)
@@ -59,7 +65,7 @@ class GraphModel(nn.Module):
 
         out_gnn = self.gnn(node_features, edge_index, edge_type)
         out_gnn = self.multi_concat(out_gnn, lengths)
-
+        out_gnn = self.fc(out_gnn)
         return out_gnn
 
     def batch_graphify(self, lengths):

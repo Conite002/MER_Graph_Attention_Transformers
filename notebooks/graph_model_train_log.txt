@@ -1,0 +1,191 @@
+Epoch 1 train loss 1.5027585621195643, val loss 1.527343559723634
+Test Accuracy: 46.57%, Test F1 Score: 17.45%
+Class 0 - Precision: 46.33%, Recall: 97.30%, F1-Score: 62.77%
+Class 1 - Precision: 54.78%, Recall: 12.88%, F1-Score: 20.86%
+Class 2 - Precision: 41.67%, Recall: 6.54%, F1-Score: 11.30%
+Class 3 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 4 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 5 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 6 - Precision: 47.25%, Recall: 19.11%, F1-Score: 27.22%
+Epoch 1: Best model saved
+Epoch 2 train loss 1.4464194914574557, val loss 1.5248145048434918
+Test Accuracy: 46.84%, Test F1 Score: 17.39%
+Class 0 - Precision: 46.54%, Recall: 98.44%, F1-Score: 63.20%
+Class 1 - Precision: 63.75%, Recall: 10.43%, F1-Score: 17.93%
+Class 2 - Precision: 41.18%, Recall: 9.15%, F1-Score: 14.97%
+Class 3 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 4 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 5 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 6 - Precision: 47.59%, Recall: 17.56%, F1-Score: 25.65%
+Epoch 2: Best model saved
+Epoch 3 train loss 1.4316956726565815, val loss 1.5274909024055188
+Test Accuracy: 47.17%, Test F1 Score: 18.29%
+Class 0 - Precision: 46.78%, Recall: 97.73%, F1-Score: 63.28%
+Class 1 - Precision: 53.62%, Recall: 15.13%, F1-Score: 23.60%
+Class 2 - Precision: 39.32%, Recall: 10.02%, F1-Score: 15.97%
+Class 3 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 4 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 5 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 6 - Precision: 56.15%, Recall: 16.22%, F1-Score: 25.17%
+Epoch 4 train loss 1.4266433301068675, val loss 1.5055882701506982
+Test Accuracy: 47.20%, Test F1 Score: 18.98%
+Class 0 - Precision: 47.02%, Recall: 96.45%, F1-Score: 63.22%
+Class 1 - Precision: 51.22%, Recall: 17.18%, F1-Score: 25.73%
+Class 2 - Precision: 38.69%, Recall: 11.55%, F1-Score: 17.79%
+Class 3 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 4 - Precision: 100.00%, Recall: 0.60%, F1-Score: 1.19%
+Class 5 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 6 - Precision: 54.07%, Recall: 16.22%, F1-Score: 24.96%
+Epoch 4: Best model saved
+Epoch 5 train loss 1.4172749308791714, val loss 1.4990379168437078
+Test Accuracy: 47.65%, Test F1 Score: 19.41%
+Class 0 - Precision: 47.08%, Recall: 97.37%, F1-Score: 63.47%
+Class 1 - Precision: 55.48%, Recall: 16.56%, F1-Score: 25.51%
+Class 2 - Precision: 40.51%, Recall: 13.94%, F1-Score: 20.75%
+Class 3 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 4 - Precision: 62.50%, Recall: 1.50%, F1-Score: 2.93%
+Class 5 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 6 - Precision: 62.75%, Recall: 14.22%, F1-Score: 23.19%
+Epoch 5: Best model saved
+Epoch 6 train loss 1.4104590452213552, val loss 1.5005188710414445
+Test Accuracy: 47.38%, Test F1 Score: 20.08%
+Class 0 - Precision: 47.28%, Recall: 95.59%, F1-Score: 63.26%
+Class 1 - Precision: 59.32%, Recall: 14.31%, F1-Score: 23.06%
+Class 2 - Precision: 35.12%, Recall: 15.69%, F1-Score: 21.69%
+Class 3 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 4 - Precision: 55.00%, Recall: 3.30%, F1-Score: 6.23%
+Class 5 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 6 - Precision: 56.62%, Recall: 17.11%, F1-Score: 26.28%
+Epoch 7 train loss 1.4081809852777194, val loss 1.504965556355623
+Test Accuracy: 47.11%, Test F1 Score: 19.00%
+Class 0 - Precision: 47.29%, Recall: 96.23%, F1-Score: 63.42%
+Class 1 - Precision: 54.69%, Recall: 14.31%, F1-Score: 22.69%
+Class 2 - Precision: 34.80%, Recall: 17.21%, F1-Score: 23.03%
+Class 3 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 4 - Precision: 57.14%, Recall: 1.20%, F1-Score: 2.35%
+Class 5 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 6 - Precision: 59.60%, Recall: 13.11%, F1-Score: 21.49%
+Epoch 8 train loss 1.4011362455825032, val loss 1.4892045259475708
+Test Accuracy: 47.83%, Test F1 Score: 20.39%
+Class 0 - Precision: 47.45%, Recall: 96.38%, F1-Score: 63.59%
+Class 1 - Precision: 55.56%, Recall: 16.36%, F1-Score: 25.28%
+Class 2 - Precision: 40.82%, Recall: 17.43%, F1-Score: 24.43%
+Class 3 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 4 - Precision: 52.00%, Recall: 3.90%, F1-Score: 7.26%
+Class 5 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 6 - Precision: 60.40%, Recall: 13.56%, F1-Score: 22.14%
+Epoch 8: Best model saved
+Epoch 9 train loss 1.3955810344842607, val loss 1.5110025268334608
+Test Accuracy: 47.38%, Test F1 Score: 19.99%
+Class 0 - Precision: 47.18%, Recall: 95.74%, F1-Score: 63.21%
+Class 1 - Precision: 44.14%, Recall: 20.04%, F1-Score: 27.57%
+Class 2 - Precision: 50.57%, Recall: 9.59%, F1-Score: 16.12%
+Class 3 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 4 - Precision: 33.33%, Recall: 4.50%, F1-Score: 7.94%
+Class 5 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 6 - Precision: 61.74%, Recall: 15.78%, F1-Score: 25.13%
+Epoch 10 train loss 1.3909546052251833, val loss 1.5093727627625833
+Test Accuracy: 47.95%, Test F1 Score: 20.43%
+Class 0 - Precision: 47.57%, Recall: 96.16%, F1-Score: 63.66%
+Class 1 - Precision: 47.96%, Recall: 19.22%, F1-Score: 27.45%
+Class 2 - Precision: 43.41%, Recall: 12.20%, F1-Score: 19.05%
+Class 3 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 4 - Precision: 75.00%, Recall: 2.70%, F1-Score: 5.22%
+Class 5 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 6 - Precision: 57.34%, Recall: 18.22%, F1-Score: 27.66%
+Epoch 11 train loss 1.3883237975511378, val loss 1.5066681401087687
+Test Accuracy: 48.04%, Test F1 Score: 20.22%
+Class 0 - Precision: 47.53%, Recall: 97.09%, F1-Score: 63.82%
+Class 1 - Precision: 56.20%, Recall: 15.75%, F1-Score: 24.60%
+Class 2 - Precision: 43.17%, Recall: 13.07%, F1-Score: 20.07%
+Class 3 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 4 - Precision: 60.00%, Recall: 2.70%, F1-Score: 5.17%
+Class 5 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 6 - Precision: 53.46%, Recall: 18.89%, F1-Score: 27.91%
+Epoch 12 train loss 1.386321220224924, val loss 1.4891652075143962
+Test Accuracy: 47.74%, Test F1 Score: 20.30%
+Class 0 - Precision: 47.49%, Recall: 96.30%, F1-Score: 63.62%
+Class 1 - Precision: 51.83%, Recall: 17.38%, F1-Score: 26.03%
+Class 2 - Precision: 38.15%, Recall: 14.38%, F1-Score: 20.89%
+Class 3 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 4 - Precision: 54.17%, Recall: 3.90%, F1-Score: 7.28%
+Class 5 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 6 - Precision: 61.82%, Recall: 15.11%, F1-Score: 24.29%
+Epoch 12: Best model saved
+Epoch 13 train loss 1.3689572835935473, val loss 1.4841776066101515
+Test Accuracy: 48.07%, Test F1 Score: 20.64%
+Class 0 - Precision: 47.70%, Recall: 96.73%, F1-Score: 63.90%
+Class 1 - Precision: 56.82%, Recall: 15.34%, F1-Score: 24.15%
+Class 2 - Precision: 39.46%, Recall: 15.90%, F1-Score: 22.67%
+Class 3 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 4 - Precision: 51.85%, Recall: 4.20%, F1-Score: 7.78%
+Class 5 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 6 - Precision: 59.06%, Recall: 16.67%, F1-Score: 26.00%
+Epoch 13: Best model saved
+Epoch 14 train loss 1.364033017557993, val loss 1.482879059245953
+Test Accuracy: 48.35%, Test F1 Score: 21.04%
+Class 0 - Precision: 47.61%, Recall: 96.87%, F1-Score: 63.84%
+Class 1 - Precision: 51.22%, Recall: 17.18%, F1-Score: 25.73%
+Class 2 - Precision: 46.32%, Recall: 13.73%, F1-Score: 21.18%
+Class 3 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 4 - Precision: 69.57%, Recall: 4.80%, F1-Score: 8.99%
+Class 5 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 6 - Precision: 58.70%, Recall: 18.00%, F1-Score: 27.55%
+Epoch 14: Best model saved
+Epoch 15 train loss 1.3615916277835565, val loss 1.479420685997376
+Test Accuracy: 47.95%, Test F1 Score: 20.75%
+Class 0 - Precision: 47.71%, Recall: 96.38%, F1-Score: 63.83%
+Class 1 - Precision: 49.02%, Recall: 15.34%, F1-Score: 23.36%
+Class 2 - Precision: 41.46%, Recall: 14.81%, F1-Score: 21.83%
+Class 3 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 4 - Precision: 58.06%, Recall: 5.41%, F1-Score: 9.89%
+Class 5 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 6 - Precision: 57.46%, Recall: 17.11%, F1-Score: 26.37%
+Epoch 15: Best model saved
+Epoch 16 train loss 1.3588321404879478, val loss 1.4839541235795388
+Test Accuracy: 48.50%, Test F1 Score: 21.22%
+Class 0 - Precision: 47.76%, Recall: 97.01%, F1-Score: 64.01%
+Class 1 - Precision: 52.50%, Recall: 17.18%, F1-Score: 25.89%
+Class 2 - Precision: 44.58%, Recall: 16.12%, F1-Score: 23.68%
+Class 3 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 4 - Precision: 68.00%, Recall: 5.11%, F1-Score: 9.50%
+Class 5 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 6 - Precision: 62.61%, Recall: 16.00%, F1-Score: 25.49%
+Epoch 17 train loss 1.3543939841722348, val loss 1.4767954653272262
+Test Accuracy: 48.10%, Test F1 Score: 21.41%
+Class 0 - Precision: 47.94%, Recall: 95.17%, F1-Score: 63.76%
+Class 1 - Precision: 47.67%, Recall: 18.81%, F1-Score: 26.98%
+Class 2 - Precision: 40.86%, Recall: 16.56%, F1-Score: 23.57%
+Class 3 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 4 - Precision: 58.62%, Recall: 5.11%, F1-Score: 9.39%
+Class 5 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 6 - Precision: 60.98%, Recall: 16.67%, F1-Score: 26.18%
+Epoch 17: Best model saved
+Epoch 18 train loss 1.3536467883604695, val loss 1.4808921802502413
+Test Accuracy: 48.32%, Test F1 Score: 21.55%
+Class 0 - Precision: 48.55%, Recall: 94.88%, F1-Score: 64.23%
+Class 1 - Precision: 46.53%, Recall: 19.22%, F1-Score: 27.21%
+Class 2 - Precision: 38.97%, Recall: 18.08%, F1-Score: 24.70%
+Class 3 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 4 - Precision: 52.17%, Recall: 3.60%, F1-Score: 6.74%
+Class 5 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 6 - Precision: 60.29%, Recall: 18.22%, F1-Score: 27.99%
+Epoch 19 train loss 1.349187015405714, val loss 1.4767695745596519
+Test Accuracy: 48.35%, Test F1 Score: 21.41%
+Class 0 - Precision: 48.01%, Recall: 96.23%, F1-Score: 64.06%
+Class 1 - Precision: 50.92%, Recall: 16.97%, F1-Score: 25.46%
+Class 2 - Precision: 42.69%, Recall: 15.90%, F1-Score: 23.17%
+Class 3 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 4 - Precision: 57.14%, Recall: 6.01%, F1-Score: 10.87%
+Class 5 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 6 - Precision: 57.04%, Recall: 17.11%, F1-Score: 26.32%
+Epoch 19: Best model saved
+Epoch 20 train loss 1.3430951230045063, val loss 1.486513838171959
+Test Accuracy: 48.10%, Test F1 Score: 21.20%
+Class 0 - Precision: 48.12%, Recall: 95.66%, F1-Score: 64.03%
+Class 1 - Precision: 47.19%, Recall: 17.18%, F1-Score: 25.19%
+Class 2 - Precision: 39.00%, Recall: 16.99%, F1-Score: 23.67%
+Class 3 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 4 - Precision: 66.67%, Recall: 5.41%, F1-Score: 10.00%
+Class 5 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 6 - Precision: 59.84%, Recall: 16.22%, F1-Score: 25.52%
