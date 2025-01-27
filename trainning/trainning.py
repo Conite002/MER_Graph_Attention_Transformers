@@ -51,7 +51,7 @@ def train_model(model, train_loader, val_loader, optimizer, criterion, args, epo
                 log.write(f"Epoch {epoch + 1}: Best model saved\n")
                 # debug_message(f"Epoch {epoch + 1}: Best model saved")
 
-def evaluate_model(model, test_loader, args, log):
+def evaluate_model(model, test_loader, args, log_file):
     model.eval()
     all_preds = []
     all_labels = []
@@ -72,14 +72,16 @@ def evaluate_model(model, test_loader, args, log):
     test_acc = accuracy_score(all_labels, all_preds)
     test_f1 = f1_score(all_labels, all_preds, average='macro')
 
-    log.write(f"Test Accuracy: {test_acc * 100:.2f}%, Test F1 Score: {test_f1 * 100:.2f}%\n")
-    debug_message(f"Test Accuracy: {test_acc * 100:.2f}%, Test F1 Score: {test_f1 * 100:.2f}%")
+    with open(log_file, 'a') as log:
+        log.write(f"Test Accuracy: {test_acc * 100:.2f}%, Test F1 Score: {test_f1 * 100:.2f}%\n")
+        debug_message(f"Test Accuracy: {test_acc * 100:.2f}%, Test F1 Score: {test_f1 * 100:.2f}%")
 
-    report = classification_report(all_labels, all_preds, target_names=[str(i) for i in range(all_labels.max() + 1)], output_dict=True)
-    for class_label, metrics in report.items():
-        if class_label.isdigit():
-            log.write(f"Class {class_label} - Precision: {metrics['precision'] * 100:.2f}%, Recall: {metrics['recall'] * 100:.2f}%, F1-Score: {metrics['f1-score'] * 100:.2f}%\n")
-            debug_message(f"Class {class_label} - Precision: {metrics['precision'] * 100:.2f}%, Recall: {metrics['recall'] * 100:.2f}%, F1-Score: {metrics['f1-score'] * 100:.2f}%")
+        report = classification_report(all_labels, all_preds, target_names=[str(i) for i in range(all_labels.max() + 1)], output_dict=True)
+        for class_label, metrics in report.items():
+            if class_label.isdigit():
+                log.write(f"Class {class_label} - Precision: {metrics['precision'] * 100:.2f}%, Recall: {metrics['recall'] * 100:.2f}%, F1-Score: {metrics['f1-score'] * 100:.2f}%\n")
+                debug_message(f"Class {class_label} - Precision: {metrics['precision'] * 100:.2f}%, Recall: {metrics['recall'] * 100:.2f}%, F1-Score: {metrics['f1-score'] * 100:.2f}%")
+    
     with open('test_results.txt', 'w') as f:
         f.write(f"Test Accuracy: {test_acc}\n")
         f.write(f"Test F1 Score: {test_f1}\n")
