@@ -275,9 +275,9 @@ class CrossModalGNN(nn.Module):
         # Cross-modal attention with residual connection
         attention_out = self.cross_modal_attention(x, edge_index)
         x = torch.relu(attention_out + self.residual(x))
-        print(f"x shape before TransformerConv: {x.shape}")
-        print(f"attention_out shape: {attention_out.shape}")  # Should match residual connection
-        print(f"x shape after residual connection: {x.shape}")
+        # print(f"x shape before TransformerConv: {x.shape}")
+        # print(f"attention_out shape: {attention_out.shape}")  # Should match residual connection
+        # print(f"x shape after residual connection: {x.shape}")
 
         # Apply batch normalization
         x = self.bn(x)

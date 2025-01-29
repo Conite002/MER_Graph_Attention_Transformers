@@ -6,3 +6,11 @@ Class 3 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
 Class 4 - Precision: 43.59%, Recall: 5.45%, F1-Score: 9.69%
 Class 5 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
 Class 6 - Precision: 50.00%, Recall: 18.39%, F1-Score: 26.89%
+Test Accuracy: 52.58%, Test F1 Score: 21.57%
+Class 0 - Precision: 53.63%, Recall: 94.69%, F1-Score: 68.48%
+Class 1 - Precision: 50.00%, Recall: 17.66%, F1-Score: 26.10%
+Class 2 - Precision: 43.20%, Recall: 14.11%, F1-Score: 21.27%
+Class 3 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 4 - Precision: 36.62%, Recall: 4.17%, F1-Score: 7.48%
+Class 5 - Precision: 0.00%, Recall: 0.00%, F1-Score: 0.00%
+Class 6 - Precision: 47.95%, Recall: 19.45%, F1-Score: 27.68%
